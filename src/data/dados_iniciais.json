@@ -1,0 +1,114 @@
+{
+  "categorias": [
+    {
+      "titulo": "Receitas diversas",
+      "cor": "red",
+      "link_extra": {
+        "text": "Canal Já Disse Janice",
+        "url": "https://www.youtube.com/channel/UC1pDz2lykdkrNpfZ-mpXj4w"
+      },
+      "videos": [
+        {
+          "titulo": "Bora Aerosa",
+          "url": "https://www.youtube.com/watch?v=EsqXFMdSQU8"
+        },
+        {
+          "titulo": "Bolinho de chuva perfeito",
+          "url": "https://www.youtube.com/watch?v=RS8gnVUX_PA"
+        },
+        {
+          "titulo": "Farofa saudável",
+          "url": "https://youtu.be/tRr5ST45J2M"
+        },
+        {
+          "titulo": "Biscoito",
+          "url": "https://youtu.be/WNNxzXwhyT4"
+        },
+        {
+          "titulo": "Pão de sal caseiro",
+          "url": "https://www.youtube.com/watch?v=wWSCuJwnPbk"
+        }
+      ]
+    },
+    {
+      "titulo": "Sobremesas",
+      "cor": "#9cd33b",
+      "videos": [
+        {
+          "titulo": "Fraisier rosalindo",
+          "url": "https://www.youtube.com/watch?v=3VY9Z-GE-GQ&t=16s"
+        },
+        {
+          "titulo": "Pudim de leite ninho com nutela",
+          "url": "https://www.youtube.com/watch?v=p6gVyj3YnvY"
+        },
+        {
+          "titulo": "Torta de limão",
+          "url": "https://youtu.be/0qgxcz-sOqQ"
+        },
+        {
+          "titulo": "Suflê de chocolate",
+          "url": "https://youtu.be/QCL-9pmMgk0"
+        },
+        {
+          "titulo": "Brownie sem glúten",
+          "url": "https://youtu.be/lDuKMckH0WY"
+        }
+      ]
+    },
+    {
+      "titulo": "Bolos",
+      "cor": "orange",
+      "videos": [
+        {
+          "titulo": "Bolo simples de baunilha sem glúten",
+          "url": "https://www.youtube.com/watch?v=zFoMJMcRlEo"
+        },
+        {
+          "titulo": "Bolo de coco",
+          "url": "https://youtu.be/2E8CP2baQf4"
+        }
+      ]
+    },
+    {
+      "titulo": "Salgado",
+      "cor": "#6BD1FF",
+      "videos": [
+        {
+          "titulo": "Como fazer quibe de abóbora",
+          "url": "https://www.youtube.com/watch?v=9PtYNo9gtVc"
+        },
+        {
+          "titulo": "Suflê salgado de queijo",
+          "url": "https://youtu.be/pdALl0rA6vs"
+        },
+        {
+          "titulo": "Quiche de alho poró",
+          "url": "https://youtu.be/BtMEby8a9JU"
+        },
+        {
+          "titulo": "Batata recheada",
+          "url": "https://youtu.be/mPQY8X0Mh34"
+        } 
+      ]
+    },
+    {
+      "titulo": "Veganas",
+      "cor": "#00C86F",
+      "videos": [
+        {
+          "titulo": "Mionese",
+          "url": "https://www.youtube.com/watch?v=8EhEd4xFGXk&list=PLN0Intnilln-TSlbCdZJhDjbYcXc-x3Ei&index=6&t=0s"
+        },
+        {
+          "titulo": "Bolinho de chuva perfeito",
+          "url": "https://www.youtube.com/watch?v=RS8gnVUX_PA"
+        },
+        {
+          "titulo": "Nuggets",
+          "url": "https://youtu.be/3f2xvvrTRz4"
+        }
+      ]
+    }
+  ]
+}
