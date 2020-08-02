@@ -1,12 +1,12 @@
 /*arquivo que inicializa o react*/
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Switch, Route} from "react-router-dom";  /*Faz o caminho entre as páginas*/
+import './index.css';
 import Home from './pages/Home/index';
 import CadastroVideo from './pages/cadastro/Video'
 import CadastroCategoria from './pages/cadastro/Categoria';
-import './index.css';
-
+/*Faz o caminho entre as páginas*/
+import {BrowserRouter, Switch, Route} from "react-router-dom"; 
 
 ReactDOM.render(
   <BrowserRouter>
