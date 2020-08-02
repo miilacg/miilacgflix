@@ -3,6 +3,7 @@
     {
       "titulo": "Receitas diversas",
       "cor": "red",
+      "corLetra": "rgb(250, 200, 200)",
       "link_extra": {
         "text": "Canal Já Disse Janice",
         "url": "https://www.youtube.com/channel/UC1pDz2lykdkrNpfZ-mpXj4w"
@@ -31,8 +32,37 @@
       ]
     },
     {
+      "titulo": "Bolos",
+      "cor": "#4B0082",
+      "corLetra": "#BA55D3",
+      "videos": [
+        {
+          "titulo": "Bolo simples de baunilha sem glúten",
+          "url": "https://www.youtube.com/watch?v=zFoMJMcRlEo"
+        },
+        {
+          "titulo": "Bolo de coco",
+          "url": "https://youtu.be/2E8CP2baQf4"
+        },
+        {
+          "titulo": "Bolo piscina de prestígio",
+          "url": "https://youtu.be/RuHB2Sphp0Q"
+        },
+        {
+          "titulo": "Bolo de champagne com brigadeiro e frutas vermelhas",
+          "url": "https://youtu.be/mPvSASf-WMY"
+        }
+        ,
+        {
+          "titulo": "Bolo de nozes com clássica baba de moça e fios de ovos caseiro",
+          "url": "https://youtu.be/UQA-pkivbWs"
+        }
+      ]
+    },
+    {
       "titulo": "Sobremesas",
-      "cor": "#9cd33b",
+      "corLetra": "#6BD1FF",
+      "cor": "#0000CD",
       "videos": [
         {
           "titulo": "Fraisier rosalindo",
@@ -57,22 +87,28 @@
       ]
     },
     {
-      "titulo": "Bolos",
-      "cor": "orange",
+      "titulo": "Veganas",
+      "corLetra": "#98FB98",
+      "cor": "#3CB371",
       "videos": [
         {
-          "titulo": "Bolo simples de baunilha sem glúten",
-          "url": "https://www.youtube.com/watch?v=zFoMJMcRlEo"
+          "titulo": "Maionese",
+          "url": "https://www.youtube.com/watch?v=8EhEd4xFGXk&list=PLN0Intnilln-TSlbCdZJhDjbYcXc-x3Ei&index=6&t=0s"
         },
         {
-          "titulo": "Bolo de coco",
-          "url": "https://youtu.be/2E8CP2baQf4"
+          "titulo": "Bolinho de chuva perfeito",
+          "url": "https://www.youtube.com/watch?v=RS8gnVUX_PA"
+        },
+        {
+          "titulo": "Nuggets",
+          "url": "https://youtu.be/3f2xvvrTRz4"
         }
       ]
     },
     {
-      "titulo": "Salgado",
-      "cor": "#6BD1FF",
+      "titulo": "Salgados",
+      "corLetra": "yellow",
+      "cor": "#FF4500",
       "videos": [
         {
           "titulo": "Como fazer quibe de abóbora",
@@ -90,24 +126,6 @@
           "titulo": "Batata recheada",
           "url": "https://youtu.be/mPQY8X0Mh34"
         } 
-      ]
-    },
-    {
-      "titulo": "Veganas",
-      "cor": "#00C86F",
-      "videos": [
-        {
-          "titulo": "Mionese",
-          "url": "https://www.youtube.com/watch?v=8EhEd4xFGXk&list=PLN0Intnilln-TSlbCdZJhDjbYcXc-x3Ei&index=6&t=0s"
-        },
-        {
-          "titulo": "Bolinho de chuva perfeito",
-          "url": "https://www.youtube.com/watch?v=RS8gnVUX_PA"
-        },
-        {
-          "titulo": "Nuggets",
-          "url": "https://youtu.be/3f2xvvrTRz4"
-        }
       ]
     }
   ]
