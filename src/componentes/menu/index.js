@@ -11,7 +11,7 @@ function Menu(){/*iniciar todo componente com letra maiuscula*/
                 <img className = "Logo" src = {logo} alt = "logo miilacgflix"></img>
             </Link>
 
-            <Button as = {Link} to = "/" className = "ButtonLink">
+            <Button as = {Link} to = "/cadastro/Video" className = "ButtonLink">
                 Novo vídeo
             </Button>
         </nav>
