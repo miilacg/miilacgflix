@@ -110,7 +110,7 @@ FormField.defaultProps = {//definição automatica caso não seja preenchido
 //precisam receber exatamente o que esperam receber
 FormField.protoType = {//olhar outros tipos na documentação
   label: PropTypes.string.isRequired,
-  type: PropTypes.string, //não é obrigatorio
+  type: PropTypes.string, //não eh obrigatorio
   valor: PropTypes.string, 
   name: PropTypes.string.isRequired, 
   onChange: PropTypes.func,
