@@ -116,5 +116,4 @@ FormField.protoType = {//olhar outros tipos na documentação
   onChange: PropTypes.func,
 };
 
-
 export default FormField;
