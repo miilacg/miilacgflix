@@ -13,7 +13,8 @@ ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path = "/" component = {Home} exact/> 
-      
+      <Route path = "/cadastro/Video" component = {CadastroVideo}/>
+      <Route path = "/cadastro/Categoria" component = {CadastroCategoria}/>
       <Route component = {PaginaErro}/>
     </Switch>       
   </BrowserRouter>,
