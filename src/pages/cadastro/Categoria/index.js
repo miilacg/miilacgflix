@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PageDefault from '../../../componentes/PageDefault';
 import FormField from '../../../componentes/FormField';
@@ -31,6 +31,36 @@ function CadastroCategoria(){
         );
     }
 
+    //chama quando quer que algum efeito colateral aconteça
+    useEffect(() => {
+        const url = 'http://localhost:8080/categorias';
+        fetch(url) //busca os dados
+            .then(async(respostaServidor) =>  { 
+                const resposta = await respostaServidor.json();
+                setCategorias([
+                    ...resposta,
+                ]);
+            });
+
+        /*setTimeout(() => {
+            setCategorias([
+                ...categorias, //colocando todas as categorias que eu já tenho de base
+                {
+                    "id": 1,
+                    "nome": "Front End",
+                    "descricao": "Uma categoria top",
+                    "cor": "#cbd1ff"
+                },
+                {
+                    "id": 2,
+                    "nome": "Back End",
+                    "descricao": "Uma categoria top",
+                    "cor": "#cbd1ff"
+                },
+            ]);  
+        }, 4 * 1000); *///em segundos
+    },[ ]);
+
     return (
         <PageDefault>
             <h1>Cadastro de Categoria: {valores.nome}</h1>
@@ -39,7 +69,7 @@ function CadastroCategoria(){
                 infosDoEvento.preventDefault();
                 setCategorias([
                     ...categorias, //colocando todas as categorias que eu já tenho de base
-                    valores
+                    valores,
                 ]);   
                 setValores(valoresIniciais) //se colocar um objeto vazio o react reclama            
             }}>
@@ -50,15 +80,13 @@ function CadastroCategoria(){
                     name = "nome"
                     onChange = {trocaDadoCategoria}
                 />
-                <div>
-                    <label>
-                        Descrição:
-                        <textarea type = "text" value = {valores.descricao} 
-                        name = "descricao"
-                        onChange = {trocaDadoCategoria}/>                         
-                    </label>
-                </div>
-
+                <FormField 
+                    label = "Descrição"
+                    type = "textarea"
+                    value = {valores.descricao}
+                    name = "descricao"
+                    onChange = {trocaDadoCategoria}
+                />
                 <FormField 
                     label = "Cor"
                     type = "color"
@@ -70,10 +98,16 @@ function CadastroCategoria(){
                 <Button> Cadastrar </Button>
             </form>
 
+            {categorias.length === 0 && (
+                <div>
+                    Carregando...
+                </div>
+            )}
+            
             <ul>
                 {categorias.map((categoria, indice) => {
                     return(/*concatenação de duas coisas. muito usado quando pode ter dados iguais*/
-                        <li key = {`${categoria}${indice}`}> {/*precisa ter uma key unica*/}
+                        <li key = {`${categoria.nome}`}> {/*precisa ter uma key unica*/}
                             {categoria.nome}
                         </li>
                     )
