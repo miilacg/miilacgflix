@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PageDefault from '../../../componentes/PageDefault';
 import FormField from '../../../componentes/FormField';
 import Button from '../../../componentes/Button';
+import useForm from '../../../hocks/useForm';
 
 function CadastroCategoria(){
     const valoresIniciais = {
@@ -11,30 +12,16 @@ function CadastroCategoria(){
         cor: '',
     }
 
+    const {trocaDadoCategoria, valores} = useForm(valoresIniciais);
     //useState tem um valor e uma função
-    const [categorias, setCategorias] = useState([]);   
-    const [valores, setValores] = useState(valoresIniciais); /*bolos é a categoria inicial*/
+    const [categorias, setCategorias, clearForm] = useState([]);       
     
-    function setValor(chave, valor){
-        //chave é um valor variavel
-        setValores ({
-            ...valores,
-            [chave]: valor, //nome: 'valor'
-        })
-    }
-
-    function trocaDadoCategoria(infosDoEvento) {
-        //const {getAttribute, value} = infosDoEvento.target;
-        setValor(
-            infosDoEvento.target.getAttribute('name'), //getAttribute('name'),
-            infosDoEvento.target.value //value
-        );
-    }
-
     //chama quando quer que algum efeito colateral aconteça
     useEffect(() => {
-        const url = 'http://localhost:8080/categorias';
-        fetch(url) //busca os dados
+        const URL = window.location.hostname.includes('localhost') //variavel toda em maiusculo eh pq ela não muda
+         ? 'http://localhost:8080/categorias'
+         : 'https://miilacgflix.herokuapp.com/categorias';
+        fetch(URL) //busca os dados
             .then(async(respostaServidor) =>  { 
                 const resposta = await respostaServidor.json();
                 setCategorias([
@@ -71,7 +58,8 @@ function CadastroCategoria(){
                     ...categorias, //colocando todas as categorias que eu já tenho de base
                     valores,
                 ]);   
-                setValores(valoresIniciais) //se colocar um objeto vazio o react reclama            
+                //limpa o formulario com os valores iniciais
+                clearForm() //se colocar um objeto vazio o react reclama            
             }}>
                 <FormField 
                     label = "Nome da categoria"
@@ -92,6 +80,14 @@ function CadastroCategoria(){
                     type = "color"
                     value = {valores.cor} 
                     name = "cor"
+                    onChange = {trocaDadoCategoria}
+                />
+
+                <FormField 
+                    label = "Cor da letra"
+                    type = "color"
+                    value = {valores.corLetra} 
+                    name = "corLetra"
                     onChange = {trocaDadoCategoria}
                 />
                 

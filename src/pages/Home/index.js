@@ -1,25 +1,56 @@
-import React from 'react';
-import Menu from './../../componentes/menu';
-import dadosIniciais from '../../data/dados_iniciais.json';
+import React, { useEffect,  useState } from 'react';
 import BannerMain from './../../componentes/BannerMain';
 import Carousel from './../../componentes/Carousel';
-import Footer from './../../componentes/Footer';
+import categoriasRepositorio from '../../repositorio/categorias'
+import PageDefault from '../../componentes/PageDefault';
 
 function Home() {
-  return (
-    <div>  
-      <Menu />
-      <BannerMain 
-        videoTitle = {dadosIniciais.categorias[0].videos[0].titulo}
-        url = {dadosIniciais.categorias[0].videos[0].url}
-        /*videoDescription = {"O que é Front-end? Trabalhando na área os termos HTML, CSS e JavaScript fazem parte da rotina das desenvolvoras e desenvolvedores. Mas o que eles fazem afinal? Descubra com Vanessa!"}*/
-      />
-      <Carousel 
-        ignoreFirstVideo
-        category = {dadosIniciais.categorias[0]}
-      />
+  const [dadosIniciais, setDadosIniciais] = useState([]);
 
-      <Carousel 
+  useEffect(() => {
+    categoriasRepositorio.getAllWithVideos()  
+      .then((categoriasComVideos) => {
+
+        setDadosIniciais(categoriasComVideos);
+      })
+      //tratar pra mostrar o erro pro usuário
+      .catch((err) => {
+        console.log(err.message); //mostrar o erro no console
+      });        
+  }, []); //o [] é pra não ficar rodando varias vezes. não ficar fazendo varias requisições (request) pro back
+
+  return (
+    <PageDefault paddingAll={0}>  
+      {dadosIniciais.length === 0  && (<div>Carregando...</div>)}
+      
+      {dadosIniciais.map((categoria, indice) => {
+        if (indice === 0) { //se for o primeiro item (item 0)
+          return (
+            <div key={categoria.id}>
+              <BannerMain
+                videoTitle={dadosIniciais[0].videos[0].titulo}
+                url={dadosIniciais[0].videos[0].url}
+                /*videoDescription= ""*/
+              />
+              <Carousel
+                ignoreFirstVideo
+                category={dadosIniciais[0]}
+              />
+            </div>
+          );
+        }
+
+        //a partir da segunda categoria
+        return (
+          <Carousel
+            key={categoria.id}
+            category={categoria}
+          />
+        );
+      })}
+
+
+      {/*<Carousel 
         category = {dadosIniciais.categorias[1]}
       />
 
@@ -33,10 +64,9 @@ function Home() {
 
       <Carousel 
         category = {dadosIniciais.categorias[4]}
-      />
+      />*/}
 
-      <Footer />
-    </div>
+    </PageDefault>
   );
 }
 

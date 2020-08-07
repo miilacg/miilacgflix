@@ -7,8 +7,11 @@ const FormFieldWrapper = styled.div`
   textarea {
     min-height: 150px;
   }
-  input[type="color"] {
+  input[name="cor"] {
     padding-left: 56px;
+  }
+  input[name="corLetra"] {
+    padding-left: 120px;
   }
 `;
 
@@ -70,12 +73,13 @@ const Input = styled.input`
 //para usar o + o Label.Text tem que vir exatamente depois
 //:not([type = 'color']) significa o foco no que não tiver o type igual a color
 
-function FormField({label, type, value, name, onChange}) {
+function FormField({label, type, value, name, onChange, sugestoes}) {
   const fildId = `id_${name}`;
   //se o type for exatamente iguala o textarea, text area. se não, input
   //const tag = type === 'textarea' ? 'textarea' : 'input'; // : significa OU
   const isTextarea = type === 'textarea';
   const tag = isTextarea ? 'textarea' : 'input';
+  const hasSugestoes = Boolean(sugestoes.length);
   //const Tag = as;
 
   return (
@@ -89,11 +93,26 @@ function FormField({label, type, value, name, onChange}) {
               value={value}
               name={name}
               onChange={onChange}
+              autoComplete={hasSugestoes ? 'off' : 'on'}
+              list={hasSugestoes ? `sugestaoFor_${fildId}` : undefined}
           />
           <Label.text>
             {label}:
           </Label.text>
-        </Label>
+          {
+            hasSugestoes && (
+              <datalist id={`sugestaoFor_${fildId}`}>
+              {
+                sugestoes.map((sugestao) => (
+                  <options value={sugestao} key={`sugestaoFor_${fildId}_options${sugestao}`}>
+                    {sugestao}
+                  </options>
+                ))
+              }
+              </datalist>
+            )
+          }
+        </Label>        
     </FormFieldWrapper>
   );
 }
@@ -102,6 +121,7 @@ FormField.defaultProps = {//definição automatica caso não seja preenchido
   type: 'text',
   value: '', //é comum o value não ter nada
   onChange: () => {},
+  sugestoes: [],
 };
 
 //tipar sem tipar. é important em react pq as componentes
@@ -112,6 +132,7 @@ FormField.protoType = {//olhar outros tipos na documentação
   valor: PropTypes.string, 
   name: PropTypes.string.isRequired, 
   onChange: PropTypes.func,
+  sugestoes: PropTypes.arrayOf(PropTypes.string)
 };
 
 export default FormField;
