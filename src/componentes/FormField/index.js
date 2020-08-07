@@ -28,7 +28,6 @@ Label.text = styled.span`
   font-size: 18px;
   font-style: normal;
   font-weight: 300;
-
   transition: .1s ease-in-out;
 `;
 
@@ -39,7 +38,6 @@ const Input = styled.input`
   width: 100%;
   height: 57px;
   font-size: 18px;
-
   outline: 0;
   border: 0;
   border-top: 4px solid transparent;
