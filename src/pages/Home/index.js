@@ -18,9 +18,9 @@ function Home() {
         console.log(err.message); //mostrar o erro no console
       });        
   }, []); //o [] é pra não ficar rodando varias vezes. não ficar fazendo varias requisições (request) pro back
-
+ 
   return (
-    <PageDefault paddingAll={0}>  
+    <PageDefault paddingAll={0} to={"/cadastro/video"} text={"Adicionar vídeo"}>  
       {dadosIniciais.length === 0  && (<div>Carregando...</div>)}
       
       {dadosIniciais.map((categoria, indice) => {
