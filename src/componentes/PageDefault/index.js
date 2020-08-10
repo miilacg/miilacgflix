@@ -16,20 +16,23 @@ const Main = styled.main`
   `}
 `;
 
-function PageDefault({children, paddingAll}){
-    return (
-        /*todo componente precisa ter uma estrutura em volta*/
-        /*no react <> chama fragment (similar ao React.Fragment*/
-        <>
-            <Menu />
-            
+function PageDefault({ children, paddingAll, to, text }){
+      return (
+         /*todo componente precisa ter uma estrutura em volta*/
+         /*no react <> chama fragment (similar ao React.Fragment*/
+         <>
+            <Menu
+               to={to}
+               text={text}                
+            />
+
             <Main paddingAll={paddingAll}>
-                {children}
+               {children}
             </Main>
-                 
+               
             <Footer />
-        </>        
-    )
+         </>        
+      )
 }
 
 export default PageDefault;
