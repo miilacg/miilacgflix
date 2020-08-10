@@ -4,15 +4,19 @@ import { Link } from 'react-router-dom';
 import './menu.css';
 import Button from '../Button';
 
-function Menu(){/*iniciar todo componente com letra maiuscula*/
+function Menu({ to, text }){/*iniciar todo componente com letra maiuscula*/
     return (
         <nav className = 'Menu'>
             <Link to = "/">
                 <img className = "Logo" src = {logo} alt = "logo miilacgflix"></img>
             </Link>
 
-            <Button as = {Link} to = "/cadastro/Video" className = "ButtonLink">
-                Novo vídeo
+            <Button 
+                as={Link}
+                to={to}
+                className="ButtonLink"
+            >
+                {text}
             </Button>
         </nav>
     );
