@@ -74,11 +74,12 @@ const Input = styled.input`
 //:not([type = 'color']) significa o foco no que não tiver o type igual a color
 
 function FormField({label, type, value, name, onChange, sugestoes}) {
-  const fildId = `id_${name}`;
   //se o type for exatamente iguala o textarea, text area. se não, input
   //const tag = type === 'textarea' ? 'textarea' : 'input'; // : significa OU
   const isTextarea = type === 'textarea';
   const tag = isTextarea ? 'textarea' : 'input';
+  const fildId = `id_${name}`;
+
   const hasSugestoes = Boolean(sugestoes.length);
   //const Tag = as;
 
@@ -95,6 +96,7 @@ function FormField({label, type, value, name, onChange, sugestoes}) {
               onChange={onChange}
               autoComplete={hasSugestoes ? 'off' : 'on'}
               list={hasSugestoes ? `sugestaoFor_${fildId}` : undefined}
+              required
           />
           <Label.text>
             {label}:
@@ -104,9 +106,9 @@ function FormField({label, type, value, name, onChange, sugestoes}) {
               <datalist id={`sugestaoFor_${fildId}`}>
               {
                 sugestoes.map((sugestao) => (
-                  <options value={sugestao} key={`sugestaoFor_${fildId}_options${sugestao}`}>
+                  <option value={sugestao} key={`sugestaoFor_${fildId}_options${sugestao}`}>
                     {sugestao}
-                  </options>
+                  </option>
                 ))
               }
               </datalist>
@@ -132,7 +134,7 @@ FormField.protoType = {//olhar outros tipos na documentação
   valor: PropTypes.string, 
   name: PropTypes.string.isRequired, 
   onChange: PropTypes.func,
-  sugestoes: PropTypes.arrayOf(PropTypes.string)
+  sugestoes: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default FormField;
