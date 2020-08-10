@@ -1,20 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import PageDefault from '../../../componentes/PageDefault';
 import FormField from '../../../componentes/FormField';
 import Button from '../../../componentes/Button';
-import useForm from '../../../hocks/useForm';
+import useForm from '../../../hooks/useForm';
+import categoriasRepositorio from '../../../repositorio/categorias';
 
 function CadastroCategoria(){
+    const history = useHistory();
     const valoresIniciais = {
-        nome: '',
+        titulo: '',
         descricao: '',
         cor: '',
+        corLetra: '',
     }
 
-    const {trocaDadoCategoria, valores} = useForm(valoresIniciais);
+    const { trocaDadoCategoria, valores } = useForm({ valoresIniciais });
     //useState tem um valor e uma função
-    const [categorias, setCategorias, clearForm] = useState([]);       
+    const [categorias, setCategorias] = useState([]);       
     
     //chama quando quer que algum efeito colateral aconteça
     useEffect(() => {
@@ -46,26 +49,30 @@ function CadastroCategoria(){
                 },
             ]);  
         }, 4 * 1000); *///em segundos
-    },[ ]);
+    },[]);
 
     return (
-        <PageDefault>
-            <h1>Cadastro de Categoria: {valores.nome}</h1>
-
-            <form onSubmit = {function handleSubmit(infosDoEvento) {
+        <PageDefault to={"/cadastro/video"} text={"Adicionar vídeo"}>
+            <h1>Cadastro de Categoria: {valores.titulo}</h1>
+           
+            <form onSubmit = {function trocaDadoCategoria(infosDoEvento) {
                 infosDoEvento.preventDefault();
-                setCategorias([
-                    ...categorias, //colocando todas as categorias que eu já tenho de base
-                    valores,
-                ]);   
-                //limpa o formulario com os valores iniciais
-                clearForm() //se colocar um objeto vazio o react reclama            
+
+                categoriasRepositorio.creat({
+                    titulo: valores.titulo,
+                    descricao: valores.descricao,
+                    cor: valores.cor,
+                    corLetra: valores.corLetra,
+                })
+                    .then(() => {
+                        history.push('/cadastro/Video'); //onde eu quero ir quando clicar
+                    });      
             }}>
                 <FormField 
                     label = "Nome da categoria"
                     type = "text"
-                    value = {valores.nome}
-                    name = "nome"
+                    value = {valores.titulo}
+                    name = "titulo"
                     onChange = {trocaDadoCategoria}
                 />
                 <FormField 
@@ -82,7 +89,6 @@ function CadastroCategoria(){
                     name = "cor"
                     onChange = {trocaDadoCategoria}
                 />
-
                 <FormField 
                     label = "Cor da letra"
                     type = "color"
@@ -101,19 +107,23 @@ function CadastroCategoria(){
             )}
             
             <ul>
-                {categorias.map((categoria, indice) => {
+                <br/>
+                <h3>Categorias já cadastradas</h3>
+                {categorias.map((categoria) => {
                     return(/*concatenação de duas coisas. muito usado quando pode ter dados iguais*/
-                        <li key = {`${categoria.nome}`}> {/*precisa ter uma key unica*/}
-                            {categoria.nome}
+                        <li key = {`${categoria.titulo}`}> {/*precisa ter uma key unica*/}
+                            {categoria.titulo}
                         </li>
                     )
                 })}
             </ul>
-            <Link to = "/">
+            <br/>
+
+            {/*<Link to = "/">
                 Ir para Home
-            </Link>
+            </Link>*/}
         </PageDefault>
-    )
+    );
 }
 
 export default CadastroCategoria;
