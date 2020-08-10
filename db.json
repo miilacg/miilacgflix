@@ -5,7 +5,11 @@
       "titulo": "Receitas diversas",
       "descricao": "receitas de varias coisas gostosas",
       "cor": "red",
-      "corLetra": "rgb(250, 200, 200)"
+      "corLetra": "rgb(250, 200, 200)",
+      "link_extra": {
+        "text": "Canal Já Disse Janice",
+        "url": "https://youtube.com/c/DevSoutinho"
+      }
     },
     {
       "id": 2,
@@ -34,6 +38,13 @@
       "descricao": "Receitas salgadas variadas",
       "cor": "#FF4500",
       "corLetra": "#yellow"
+    },
+    {
+      "titulo": "Video padrão",
+      "descricao": "sgfdg",
+      "cor": "#b64343",
+      "corLetra": "#a20606",
+      "id": 6
     }
   ],
   "videos": [
@@ -219,12 +230,18 @@
       "url": "https://www.youtube.com/watch?v=5t2gq3xJZ9o",
       "categoriaId": 5,
       "id": 55
-    }
+    },
     {
       "titulo": "Video padrão",
       "url": "https://www.youtube.com/watch?v=-nYNd6EuZHU&feature=youtu.be",
       "categoriaId": 1,
       "id": 57
+    },
+    {
+      "titulo": "Video padrão",
+      "url": "https://www.youtube.com/watch?v=-nYNd6EuZHU&feature=youtu.be",
+      "categoriaId": 3,
+      "id": 58
     }
   ]
 }
