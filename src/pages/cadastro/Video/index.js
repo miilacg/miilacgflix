@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import PageDefault from '../../../componentes/PageDefault'
-import { Link, useHistory } from 'react-router-dom';
-import useForm from '../../../hocks/useForm';
+import { /*Link,*/ useHistory } from 'react-router-dom';
+import useForm from '../../../hooks/useForm';
 import FormField from '../../../componentes/FormField';
-import Button from '../../../componentes/Button'
-import videosRepositorio from '../../../repositorio/videos'
-import categoriasRepositorio from '../../../repositorio/categorias'
+import Button from '../../../componentes/Button';
+import videosRepositorio from '../../../repositorio/videos';
+import categoriasRepositorio from '../../../repositorio/categorias';
 
 function CadastroVideo(){
     const history = useHistory();
     const [categorias, setCategorias] = useState([]);
     const categoriasTitulos = categorias.map(({ titulo }) => titulo);
-    const { trocaDadoCategoria, valores } = useForm({
+    const { trocaDadoVideo, valores } = useForm({
         titulo: '',
+        descricao: '',
         url: '',
         categoria: '',
     });
@@ -25,11 +26,11 @@ function CadastroVideo(){
             });        
     }, []); //nunca esquecer []
 
-    return (
-        <PageDefault>
+    return (        
+        <PageDefault to={"/cadastro/categoria"} text={"Adicionar categoria"}>
             <h1>Cadastro de Vídeo</h1>
 
-            <form onSubmit ={(event) => {
+            <form onSubmit ={function trocaDadoVideo(event) {
                 event.preventDefault();
                 //alert('Video cadastrado com sucesso!!!');
 
@@ -40,6 +41,7 @@ function CadastroVideo(){
                 videosRepositorio.create({
                     titulo: valores.titulo,
                     url: valores.url,
+                    descricao: valores.descricao,
                     categoriaId: categoriaEscolhida.id,
                 })
                     .then(() => {
@@ -51,32 +53,35 @@ function CadastroVideo(){
                     label = "Título do vídeo"
                     value = {valores.titulo}
                     name = "titulo"
-                    onChange = {trocaDadoCategoria}
+                    onChange = {trocaDadoVideo}
                 />
-
+                <FormField 
+                    label = "Descrição"
+                    type = "textarea"
+                    value = {valores.descricao}
+                    name = "descricao"
+                    onChange = {trocaDadoVideo}
+                />
                 <FormField 
                     label = "URL"
                     value = {valores.url}
                     name = "url"
-                    onChange = {trocaDadoCategoria}
+                    onChange = {trocaDadoVideo}
                 />
-
                 <FormField 
                     label = "Categoria"
                     value = {valores.categoria}
                     name = "categoria"
-                    onChange = {trocaDadoCategoria}
-                    sugestoes={categoriasTitulos}
+                    onChange = {trocaDadoVideo}
+                    sugestoes={categoriasTitulos}                    
                 />
 
-                <Button type="submit">
-                    Cadastrar
-                </Button>
+                <Button> Cadastrar </Button>                
             </form>
-
-            <Link to = "/cadastro/categoria">
+            <br/>
+            {/*<Link to = "/cadastro/categoria">
                 Cadastrar Categoria
-            </Link>
+            </Link>*/}
         </PageDefault>
     );
 }

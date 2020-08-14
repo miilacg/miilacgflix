@@ -56,8 +56,8 @@ function CadastroCategoria(){
             <h1>Cadastro de Categoria: {valores.titulo}</h1>
            
             <form onSubmit = {function trocaDadoCategoria(infosDoEvento) {
-                infosDoEvento.preventDefault();
-
+                infosDoEvento.preventDefault();        
+               
                 categoriasRepositorio.creat({
                     titulo: valores.titulo,
                     descricao: valores.descricao,
