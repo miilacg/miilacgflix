@@ -5,7 +5,7 @@ import FormField from '../../../componentes/FormField';
 import Button from '../../../componentes/Button';
 
 function CadastroCategoria(){
-    const valoresIniciais = {
+    const valoresIniciais={
         nome: '',
         descricao: '',
         cor: '',
