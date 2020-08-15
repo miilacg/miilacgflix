@@ -1,16 +1,186 @@
 {
-    "categorias": [
-        {
-            "id": 1,
-            "nome": "Front End",
-            "descricao": "Uma categoria top",
-            "cor": "#cbd1ff"
-        },
-        {
-            "id": 2,
-            "nome": "Back End",
-            "descricao": "Uma categoria top",
-            "cor": "#cbd1ff"
-        }
-    ] 
+  "categorias": [
+    {
+      "id": 1,
+      "titulo": "Receitas diversas",
+      "descricao": "receitas de varias coisas gostosas",
+      "cor": "red",
+      "corLetra": "rgb(250, 200, 200)",
+      "link_extra": {
+        "text": "Canal Já Disse Janice",
+        "url": "https://youtube.com/c/DevSoutinho"
+      }
+    },
+    {
+      "id": 2,
+      "titulo": "Bolos",
+      "descricao": "Receitas de vários tipos de bolos",
+      "cor": "#4B0082",
+      "corLetra": "#BA55D3"
+    },
+    {
+      "id": 3,
+      "titulo": "Sobremesas",
+      "descricao": "Receitas de vários tipos de sobremesas",
+      "cor": "#0000CD",
+      "corLetra": "#6BD1FF"
+    },
+    {
+      "id": 4,
+      "titulo": "Veganas",
+      "descricao": "Receitas veganas variadas",
+      "cor": "#3CB371",
+      "corLetra": "#98FB98"
+    },
+    {
+      "id": 5,
+      "titulo": "Salgados",
+      "descricao": "Receitas salgadas variadas",
+      "cor": "#FF4500",
+      "corLetra": "#yellow"
+    } 
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "categoriaId": 1,
+      "titulo": "Bora Aerosa",
+      "descricao": " ",
+      "url": "https://www.youtube.com/watch?v=EsqXFMdSQU8"
+    },
+    {
+      "id": 2,
+      "categoriaId": 1,
+      "titulo": "Bolinho de chuva perfeito",
+      "descricao": "",
+      "url": "https://www.youtube.com/watch?v=RS8gnVUX_PA"
+    },
+    {
+      "id": 3,
+      "categoriaId": 1,
+      "titulo": "Farofa saudável",
+      "descricao": "",
+      "url": "https://youtu.be/tRr5ST45J2M"
+    },
+    {
+      "id": 4,
+      "categoriaId": 1,
+      "titulo": "Biscoito",
+      "url": "https://youtu.be/WNNxzXwhyT4"
+    },
+    {
+      "id": 5,
+      "categoriaId": 1,
+      "titulo": "Pão de sal caseiro",
+      "url": "https://www.youtube.com/watch?v=wWSCuJwnPbk"
+    },
+    {
+      "id": 6,
+      "categoriaId": 2,
+      "titulo": "Bolo simples de baunilha sem glúten",
+      "url": "https://www.youtube.com/watch?v=zFoMJMcRlEo"
+    },
+    {
+      "id": 7,
+      "categoriaId": 2,
+      "titulo": "Bolo de coco",
+      "url": "https://youtu.be/2E8CP2baQf4"
+    },
+    {
+      "id": 8,
+      "categoriaId": 2,
+      "titulo": "Bolo piscina de prestígio",
+      "url": "https://youtu.be/RuHB2Sphp0Q"
+    },
+    {
+      "id": 9,
+      "categoriaId": 2,
+      "titulo": "Novidades do Angular v9",
+      "url": "https://www.youtube.com/watch?v=34uHo7hFmG0"
+    },
+    {
+      "id": 10,
+      "categoriaId": 2,
+      "titulo": "Bolo de champagne com brigadeiro e frutas vermelhas",
+      "url": "https://youtu.be/mPvSASf-WMY"
+    },
+    {
+      "id": 11,
+      "categoriaId": 2,
+      "titulo": "Bolo de nozes com clássica baba de moça e fios de ovos caseiro",
+      "url": "https://youtu.be/UQA-pkivbWs"
+    },
+    {
+      "id": 12,
+      "categoriaId": 3,
+      "titulo": "Fraisier rosalindo",
+      "url": "https://www.youtube.com/watch?v=3VY9Z-GE-GQ&t=16s"
+    },   
+    {
+      "id": 13,
+      "categoriaId": 3,
+      "titulo": "Pudim de leite ninho com nutela",
+      "url": "https://www.youtube.com/watch?v=p6gVyj3YnvY"
+    },
+    {
+      "id": 14,
+      "categoriaId": 3,
+      "titulo": "Torta de limão",
+      "url": "https://youtu.be/0qgxcz-sOqQ"
+    },
+    {
+      "id": 15,
+      "categoriaId": 3,
+      "titulo": "Suflê de chocolate",
+      "url": "https://youtu.be/QCL-9pmMgk0"
+    },
+    {
+      "id": 16,
+      "categoriaId": 3,
+      "titulo": "Brownie sem glúten",
+      "url": "https://youtu.be/lDuKMckH0WY"
+    },
+    {
+      "id": 17,
+      "categoriaId": 4,
+      "titulo": "Maionese",
+      "url": "https://www.youtube.com/watch?v=8EhEd4xFGXk&list=PLN0Intnilln-TSlbCdZJhDjbYcXc-x3Ei&index=6&t=0s"
+    },
+    {
+      "id": 18,
+      "categoriaId": 4,
+      "titulo": "Bolinho de chuva perfeito",
+      "url": "https://www.youtube.com/watch?v=RS8gnVUX_PA"
+    },
+    {
+      "id": 19,
+      "categoriaId": 4,
+      "titulo": "Nuggets",
+      "url": "https://youtu.be/3f2xvvrTRz4"
+    },
+    {
+      "id": 20,
+      "categoriaId": 5,
+      "titulo": "Como fazer quibe de abóbora",
+      "url": "https://www.youtube.com/watch?v=9PtYNo9gtVc"
+    },
+    {
+      "id": 21,
+      "categoriaId": 5,
+      "titulo": "Suflê salgado de queijo",
+      "url": "https://youtu.be/pdALl0rA6vs"
+    },
+    {
+      "id": 22,
+      "categoriaId": 5,
+      "titulo": "Quiche de alho poró",
+      "url": "https://youtu.be/BtMEby8a9JU"
+    },
+    {
+      "id": 23,
+      "categoriaId": 5,
+      "titulo": "Batata recheada",
+      "url": "https://youtu.be/mPQY8X0Mh34"
+    }
+  ]
 }
