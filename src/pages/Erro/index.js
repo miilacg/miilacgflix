@@ -12,7 +12,7 @@ const Title = styled.h1`
 function PaginaErro(){
     return (
         <PageDefault>
-            <Title>Essa página existe</Title>
+            <Title>Essa não página existe</Title>
         </PageDefault>
     )
 }
